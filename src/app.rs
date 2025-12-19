@@ -13,7 +13,7 @@ pub struct App {
     pub todos: Vec<Todo>,
     pub state: ListState,
 
-    // Input mode
+    
     pub input: String,
     pub input_mode: bool,
 }

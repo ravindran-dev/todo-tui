@@ -20,7 +20,7 @@ pub fn draw<B: Backend>(f: &mut Frame<B>, app: &mut App) {
         ])
         .split(size);
 
-    // ---------- Todo List ----------
+ 
     let items: Vec<ListItem> = app
         .todos
         .iter()
@@ -63,7 +63,7 @@ pub fn draw<B: Backend>(f: &mut Frame<B>, app: &mut App) {
 
     f.render_stateful_widget(list, chunks[0], &mut app.state);
 
-    // ---------- Input Box ----------
+
     let input_title = if app.input_mode {
         " Add Todo (Enter = save | Esc = cancel) "
     } else {
@@ -88,7 +88,6 @@ pub fn draw<B: Backend>(f: &mut Frame<B>, app: &mut App) {
 
     f.render_widget(input, chunks[1]);
 
-    // Cursor when typing
     if app.input_mode {
         f.set_cursor(
             chunks[1].x + app.input.len() as u16 + 1,
