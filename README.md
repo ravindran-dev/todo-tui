@@ -1,4 +1,4 @@
-# Todo TUI (Rust)
+# Todo TUI 
 
 A **terminal-based Todo application** built using **Rust** and **TUI**, designed to be fast, safe, and keyboard-driven. This project demonstrates real-world Rust concepts such as state management, terminal UI rendering, and persistent storage.
 
