@@ -1,6 +1,6 @@
 
 [package]
-name = "todo-tui"
+name = "todo-tui-rs"
 version = "0.1.0"
 edition = "2021"
 authors = ["Your Name <your@email.com>"]
