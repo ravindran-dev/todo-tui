@@ -73,7 +73,7 @@ pub fn draw<B: Backend>(f: &mut Frame<B>, app: &mut App) {
     } else if app.input_mode {
         " 󰀤 Add Todo "
     } else {
-        " a Add | e Edit | d Delete | p Priority | s Search | t Theme | ? Help "
+        " Add [a] | Edit [e] | Delete [d] | Priority [p] | Search [s] | Theme [s] | Help [?] "
     };
 
     let input = Paragraph::new(if app.search_mode {

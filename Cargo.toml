@@ -1,12 +1,19 @@
+
 [package]
 name = "todo-tui"
 version = "0.1.0"
 edition = "2021"
+authors = ["Your Name <your@email.com>"]
+description = "A terminal-based Todo application built with Rust and TUI"
+license = "MIT"
+repository = "https://github.com/your-username/todo-tui"
+readme = "README.md"
+keywords = ["todo", "tui", "terminal", "cli"]
+categories = ["command-line-utilities"]
 
 [dependencies]
 tui = "0.19"
 crossterm = "0.27"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-uuid = { version = "1.8", features = ["v4", "serde"] }
-
+uuid = { version = "1", features = ["v4", "serde"] }
