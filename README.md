@@ -125,14 +125,19 @@ The app will launch directly inside your terminal.
 * Modular Rust project structure
 
 
+## Additional features added
 
-##  Future Improvements
+- Inline Todo Editing - Edit existing tasks directly within the terminal.
 
-* Edit existing todos
-* Add priority levels / due dates
-* Search and filter todos
-* Theme support (dark / light)
-* Export todos to file
+- Priority System with Auto-Sorting - Assign High, Medium, or Low priority to tasks, which automatically reorder based on importance.
+
+- Search & Filter Mode - Quickly find tasks using a live, keyword-based search.
+
+- Theme Toggle - Switch between a neon-themed UI and a minimal theme at runtime.
+
+- Delete Confirmation Popup - Prevent accidental deletions with a confirmation dialog.
+
+- Improved Help Popup - Clean, well-structured keybindings guide for better usability.
 
 
 ##  Contributing
@@ -144,6 +149,8 @@ Contributions, issues, and feature requests are welcome.
 3. Commit changes
 4. Open a pull request
 
+## Screenshot
+<img width="1918" height="1028" alt="image" src="https://github.com/user-attachments/assets/b7b9ed93-889a-4f4c-bdfe-c764537da58e" />
 
 
 ##  License
