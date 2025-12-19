@@ -12,10 +12,9 @@ pub struct Todo {
 pub struct App {
     pub todos: Vec<Todo>,
     pub state: ListState,
-
-    
     pub input: String,
     pub input_mode: bool,
+    pub show_help: bool,
 }
 
 impl App {
@@ -30,6 +29,7 @@ impl App {
             state,
             input: String::new(),
             input_mode: false,
+            show_help: false,
         }
     }
 
@@ -85,5 +85,9 @@ impl App {
                 self.state.select(Some(i.min(self.todos.len() - 1)));
             }
         }
+    }
+
+    pub fn toggle_help(&mut self) {
+        self.show_help = !self.show_help;
     }
 }

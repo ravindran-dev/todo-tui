@@ -26,11 +26,17 @@ fn main() -> Result<(), io::Error> {
 
         if event::poll(Duration::from_millis(200))? {
             if let Event::Key(key) = event::read()? {
+                if app.show_help {
+                    match key.code {
+                        KeyCode::Esc | KeyCode::Char('q') => app.show_help = false,
+                        _ => {}
+                    }
+                    continue;
+                }
+
                 match key.code {
-                 
                     KeyCode::Char('q') if !app.input_mode => break,
 
-                    
                     KeyCode::Enter if app.input_mode => app.submit_input(),
                     KeyCode::Esc if app.input_mode => {
                         app.input.clear();
@@ -43,12 +49,12 @@ fn main() -> Result<(), io::Error> {
                         app.input.push(c);
                     }
 
-                 
                     KeyCode::Char('a') if !app.input_mode => app.start_input(),
                     KeyCode::Char('d') if !app.input_mode => app.delete(),
                     KeyCode::Char(' ') if !app.input_mode => app.toggle(),
                     KeyCode::Down if !app.input_mode => app.next(),
                     KeyCode::Up if !app.input_mode => app.previous(),
+                    KeyCode::Char('?') if !app.input_mode => app.toggle_help(),
 
                     _ => {}
                 }
