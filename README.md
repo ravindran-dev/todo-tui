@@ -1,3 +1,7 @@
+[![Crates.io](https://img.shields.io/crates/v/todo-tui-rs.svg)](https://crates.io/crates/todo-tui-rs)
+[![Downloads](https://img.shields.io/crates/d/todo-tui-rs.svg)](https://crates.io/crates/todo-tui-rs)
+
+
 # Todo TUI 
 
 A **terminal-based Todo application** built using **Rust** and **TUI**, designed to be fast, safe, and keyboard-driven. This project demonstrates real-world Rust concepts such as state management, terminal UI rendering, and persistent storage.
@@ -78,8 +82,13 @@ rustc --version
 cargo --version
 ```
 
+## 2️ Installation
 
-
+```bash
+cargo install todo-tui-rs
+```
+ or 
+ 
 ### 2️ Clone the Repository
 
 ```bash
