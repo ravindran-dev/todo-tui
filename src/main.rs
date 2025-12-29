@@ -1,3 +1,4 @@
+
 mod app;
 mod storage;
 mod ui;
@@ -100,4 +101,3 @@ fn main() -> Result<(), io::Error> {
     execute!(terminal.backend_mut(), LeaveAlternateScreen)?;
     Ok(())
 }
-

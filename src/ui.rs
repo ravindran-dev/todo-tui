@@ -1,3 +1,4 @@
+
 use tui::{
     backend::Backend,
     layout::{Alignment, Constraint, Direction, Layout, Rect},
@@ -182,22 +183,60 @@ fn draw_help_popup<B: Backend>(f: &mut Frame<B>, accent: Color) {
     f.render_widget(block, area);
 }
 
+
 fn draw_confirm_popup<B: Backend>(f: &mut Frame<B>, accent: Color) {
     let area = centered_rect(50, 30, f.size());
 
-    let block = Paragraph::new("Delete this todo?\n\n[y] Yes    [n] No")
+    let content = vec![
+        Spans::from(Span::styled(
+            " Delete Todo",
+            Style::default()
+                .fg(Color::Red)
+                .add_modifier(Modifier::BOLD),
+        )),
+        Spans::from(""),
+        Spans::from(Span::styled(
+            "This action cannot be undone.",
+            Style::default().fg(Color::Gray),
+        )),
+        Spans::from(""),
+        Spans::from(Span::styled(
+            "Are you sure you want to delete this todo?",
+            Style::default().fg(Color::White),
+        )),
+        Spans::from(""),
+        Spans::from(Spans::from(vec![
+            Span::styled(
+                " [Y] Yes ",
+                Style::default()
+                    .fg(Color::Black)
+                    .bg(Color::Red)
+                    .add_modifier(Modifier::BOLD),
+            ),
+            Span::raw("    "),
+            Span::styled(
+                " [N] No ",
+                Style::default()
+                    .fg(Color::Black)
+                    .bg(Color::Green)
+                    .add_modifier(Modifier::BOLD),
+            ),
+        ])),
+    ];
+
+    let popup = Paragraph::new(content)
         .alignment(Alignment::Center)
         .block(
             Block::default()
-                .title(Spans::from(Span::styled(
+                .title(Span::styled(
                     " Confirm ",
                     Style::default().fg(accent).add_modifier(Modifier::BOLD),
-                )))
+                ))
                 .borders(Borders::ALL)
-                .border_style(Style::default().fg(accent)),
+                .border_style(Style::default().fg(Color::Red)),
         );
 
     f.render_widget(Clear, area);
-    f.render_widget(block, area);
+    f.render_widget(popup, area);
 }
 
